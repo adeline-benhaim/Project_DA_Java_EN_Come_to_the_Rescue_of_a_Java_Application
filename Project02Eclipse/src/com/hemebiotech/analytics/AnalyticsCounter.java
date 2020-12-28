@@ -7,6 +7,9 @@ public class AnalyticsCounter {
 
 		ISymptomReader fileReader = new FileSymptomReader("Project02Eclipse/symptoms.txt");
 		ArrayList<String> result = fileReader.getSymptoms();
-        System.out.println(result);
+
+		ISymptomCounter counter = new CountSymptom();
+		TreeMap<String,Integer> resultSymptom = counter.countSymptoms(result);
+        System.out.println(resultSymptom);
 	}
 }
