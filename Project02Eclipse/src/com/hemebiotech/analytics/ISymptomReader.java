@@ -1,20 +1,21 @@
 package com.hemebiotech.analytics;
-
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Anything that will read symptom data from a source
- * The important part is, the return value from the operation, which is a list of strings,
+ * The important part is, the return value from the operation, which is a Arraylist of strings,
  * that may contain many duplications
- * 
- * The implementation does not need to order the list
- * 
+ *
+ * The implementation does not need to order the Arraylist
+ *
  */
-public interface ISymptomReader {
+public interface ISymptomReader  {
+
 	/**
 	 * If no data is available, return an empty List
-	 * 
-	 * @return a raw listing of all Symptoms obtained from a data source, duplicates are possible/probable
 	 */
-	List<String> GetSymptoms ();
+
+	ArrayList<String> getSymptoms();
+
 }
+
