@@ -3,10 +3,10 @@ import java.util.ArrayList;
 import java.util.TreeMap;
 
 /**
- * CountSymptom implement the interface ISymptomCounter
+ * SymptomCounter implement the interface ISymptomCounter
  * @see ISymptomCounter
  */
-class CountSymptom implements ISymptomCounter {
+class SymptomCounter implements ISymptomCounter {
 
     /**
      * Extracts symptoms String from a ArrayList
@@ -15,7 +15,7 @@ class CountSymptom implements ISymptomCounter {
     @Override
     public TreeMap<String,Integer> countSymptoms(ArrayList<String> myList) {
 
-        TreeMap<String,Integer> table = new TreeMap<>();
+        TreeMap<String,Integer> map = new TreeMap<>();
         int i;
         for (i = 0; i < myList.size(); i++) {
             int occurrence;
@@ -26,12 +26,12 @@ class CountSymptom implements ISymptomCounter {
             if (symptom.equals("")) {
                 symptom = "no symptoms";
             }
-            if (table.containsKey(symptom)) {
-                occurrence = table.get(symptom);
+            if (map.containsKey(symptom)) {
+                occurrence = map.get(symptom);
                 occurrence++;
             } else occurrence = 1;
-            table.put(symptom, occurrence);
+            map.put(symptom, occurrence);
         }
-        return table;
+        return map;
     }
 }
