@@ -10,10 +10,10 @@ public class AnalyticsCounter {
 		ISymptomReader fileReader = new FileSymptomReader("Project02Eclipse/symptoms.txt");
 		ArrayList<String> result = fileReader.getSymptoms();
 
-		ISymptomCounter counter = new CountSymptom();
+		ISymptomCounter counter = new SymptomCounter();
 		TreeMap<String,Integer> resultSymptom = counter.countSymptoms(result);
 
-		ISymptomExport fileWriter = new ExportFile("results.out");
+		ISymptomExport fileWriter = new FileSymptomWriter("results.out");
 		File out = fileWriter.exportFile(resultSymptom);
 	}
 }
